@@ -5,11 +5,13 @@ import sys
 import csv
 import os
 
-if len(sys.argv) < 2:
-    print "ERROR: Keyspace name not provided."
+if len(sys.argv) < 3:
+    print "ERROR: Expecting 2 arguments"
+    print "ARG1: Keyspace name ARG2: Cassandra hostname or IP"
     exit(1)
 else:
     keyspace_name = sys.argv[1]
+    HOST = [sys.argv[2]]
 
 schema_query = '''SELECT * FROM system_schema.tables \
                 WHERE keyspace_name=%s;'''
@@ -21,7 +23,7 @@ du_command = "echo 'size_on_disk',`du -hc /var/lib/cassandra/data/%s/%s* \
             | grep total | awk '{print $1}'`"
 
 def setup():
-    cluster = Cluster()
+    cluster = Cluster(HOST)
     session = cluster.connect()
     return session
 

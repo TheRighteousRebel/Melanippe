@@ -1,0 +1,22 @@
+keyspace_name,games
+table_name,games_by_year
+bloom_filter_fp_chance,0.01
+caching,"{u'keys': u'ALL', u'rows_per_partition': u'NONE'}"
+cdc,
+comment,
+compaction,"{u'class': u'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', u'max_threshold': u'32', u'min_threshold': u'4'}"
+compression,"{u'chunk_length_in_kb': u'64', u'class': u'org.apache.cassandra.io.compress.LZ4Compressor'}"
+crc_check_chance,1.0
+dclocal_read_repair_chance,0.1
+default_time_to_live,0
+extensions,{}
+flags,SortedSet([u'compound'])
+gc_grace_seconds,864000
+id,df7cbb80-1446-11e8-aedb-2f427eaf51e8
+max_index_interval,2048
+memtable_flush_period_in_ms,0
+min_index_interval,128
+read_repair_chance,0.0
+speculative_retry,99PERCENTILE
+columns,"{u'score': u'clustering', u'year': u'partition_key', u'budget': u'clustering', u'name': u'regular'}"
+size_on_disk,8.0K
