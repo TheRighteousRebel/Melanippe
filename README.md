@@ -1,4 +1,6 @@
 # Melanippe
+[DEPRECATED]
+
 Python CLI tool for profiling databases
 
 Started as a one-off script in my ML repo.
